@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Business Card Manager Design System - Professional & Modern */
+
+@layer base {
+  :root {
+    /* Base colors - Professional business theme */
+    --background: 0 0% 98%;
+    --foreground: 215 25% 16%;
+
+    /* Card system - Clean and professional */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 16%;
+
+    /* Primary brand - Professional blue */
+    --primary: 214 84% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 214 84% 70%;
+
+    /* Secondary - Sophisticated gray */
+    --secondary: 215 16% 95%;
+    --secondary-foreground: 215 25% 16%;
+
+    /* Muted tones */
+    --muted: 215 16% 95%;
+    --muted-foreground: 215 16% 46%;
+
+    /* Accent - Complementary success color */
+    --accent: 142 76% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --success: 142 76% 55%;
+
+    /* UI elements */
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 214 84% 56%;
+
+    /* Gradients for modern appeal */
+    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(214 84% 70%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(215 16% 97%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 84% 56%) 0%, hsl(142 76% 55%) 100%);
+
+    /* Shadows for depth */
+    --shadow-sm: 0 1px 2px 0 hsl(215 25% 16% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(215 25% 16% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(215 25% 16% / 0.1);
+    --shadow-glow: 0 0 20px hsl(214 84% 56% / 0.3);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme - Professional and elegant */
+    --background: 215 28% 7%;
+    --foreground: 215 16% 92%;
+
+    --card: 215 28% 9%;
+    --card-foreground: 215 16% 92%;
+
+    --popover: 215 28% 9%;
+    --popover-foreground: 215 16% 92%;
+
+    --primary: 214 84% 66%;
+    --primary-foreground: 215 28% 7%;
+    --primary-glow: 214 84% 80%;
+
+    --secondary: 215 20% 15%;
+    --secondary-foreground: 215 16% 92%;
+
+    --muted: 215 20% 15%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 142 76% 65%;
+    --accent-foreground: 215 28% 7%;
+
+    --destructive: 0 84% 70%;
+    --destructive-foreground: 215 28% 7%;
+
+    --border: 215 20% 15%;
+    --input: 215 20% 15%;
+    --ring: 214 84% 66%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 84% 66%), hsl(214 84% 80%));
+    --gradient-card: linear-gradient(135deg, hsl(215 28% 9%), hsl(215 20% 12%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 84% 66%) 0%, hsl(142 76% 65%) 100%);
+
+    /* Dark mode shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 20px hsl(214 84% 66% / 0.4);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground;
+  }
+}
+
+@layer utilities {
+  /* Custom gradient utilities */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  /* Shadow utilities */
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+}
